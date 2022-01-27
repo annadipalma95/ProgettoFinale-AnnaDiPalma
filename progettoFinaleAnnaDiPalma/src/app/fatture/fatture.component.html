@@ -12,7 +12,7 @@
         <tbody>
           <tr *ngFor="let fattura of fatture">
             <td>{{fattura.data | date:'EEEE, MMMM d, y'}} </td>
-            <td>{{fattura.importo}}</td>
+            <td>{{fattura.importo | currency:'EUR'}}</td>
             <td>{{fattura.stato.nome}}</td>
             <td>{{fattura.cliente.nomeContatto}}</td>
             <td>{{fattura.cliente.ragioneSociale}}</td>
