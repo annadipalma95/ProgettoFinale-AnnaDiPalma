@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">PROVINCIA</th>
+                        <th scope="col">SIGLA</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let provincia of province">
+                        <td>{{provincia.id}}</td>
+                        <td>{{provincia.nome}}</td>
+                        <td>{{provincia.sigla}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-4">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">COMUNE</th>
+                        <th scope="col">PROVINCIA</th>
+                        <th scope="col">SIGLA</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let comune of comuni">
+                        <td>{{comune.id}}</td>
+                        <td>{{comune.nome}}</td>
+                        <td>{{comune.provincia.nome}}</td>
+                        <td>{{comune.provincia.sigla}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-2" id="btnBox">
+            <button class="mb-5 btn-dark" (click)="goAdd()">GO ADD<br>
+                <i class="bi bi-arrow-right-square-fill"></i>
+            </button>
+        </div>
+    </div>
+</div>

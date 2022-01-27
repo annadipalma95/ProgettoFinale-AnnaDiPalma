@@ -1,0 +1,31 @@
+<div class="container">
+
+    <div class="container text-center text-white my-4 py-3">
+        <h2 class="text-danger">Le fatture di: <b>{{nomeCliente}}</b></h2>
+    </div>
+    <button class="btn-dark mb-3"(click)="goBack()"><i class="bi bi-arrow-left-square-fill"> GO BACK </i></button>
+
+    <table class="table table-striped text-center">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Numero</th>
+                <th scope="col">Anno</th>
+                <th scope="col">Importo</th>
+                <th scope="col">Stato</th>
+                <th scope="col">Cliente</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let fattura of fatture">
+                <th scope="row">{{ fattura.id }}</th>
+                <td>{{ fattura.numero }}</td>
+                <td>{{ fattura.anno}}</td>
+                <td>{{ fattura.importo | currency: "EUR" }}</td>
+                <td class="fattura{{fattura.stato.id}}">{{ fattura.stato.nome }}</td>
+                <td>{{ fattura.cliente.ragioneSociale }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

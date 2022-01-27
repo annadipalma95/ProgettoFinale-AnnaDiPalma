@@ -1,0 +1,57 @@
+<div class="container-fluid my-3 border shadow">
+
+    <div class="row p-3">
+
+        <div class="col-6">
+
+            <div class="border p-3 col">
+                <h4>Inserisci nome Provincia</h4>
+                <hr>
+                <input type="text" class="form-control"
+                    name="nuovaProvincia" [(ngModel)]="newProvincia.nome"
+                    placeholder="Inserici il nome della provincia...">
+            </div>
+
+            <div class="border p-3 col">
+                <h4>Inserisci sigla Provincia</h4>
+                <hr>
+                <input type="text" class="form-control"
+                    name="nuovaProvinciaSigla" [(ngModel)]="newProvincia.sigla"
+                    placeholder="Inserici la sigla della provincia...">
+            </div>
+
+            <div class="text-center">
+                <h4 class="text-primary">{{testoProv}}</h4>
+            </div>
+            <div class="text-center m-5">
+                <button class="btn btn-success btn-lg" (click)="salvaProvincia()">SALVA PROVINCIA</button>
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class="border p-3 col">
+                <h4>Inserisci Comune</h4>
+                <hr>
+                <input type="text" class="form-control" name="nuovoComune" [(ngModel)]="newComune.nome"
+                    placeholder="Inserici il nome...">
+            </div>
+
+            <div class="border p-3 col">
+                <h4>Seleziona la provincia</h4>
+                <hr>
+                <select class="form-select" name="province" [(ngModel)]="provSel">
+                    <option [ngValue]="provincia.id" *ngFor="let provincia of province">{{provincia.nome}}</option>
+                </select>
+            </div>
+
+            <div class="text-center">
+                <h4 class="text-primary">{{testoComune}}</h4>
+            </div>
+
+            <div class="text-center m-5">
+                <button class="btn btn-success btn-lg" (click)="salvaComune()">SALVA COMUNE</button>
+            </div>
+
+        </div>
+    </div>
+</div>

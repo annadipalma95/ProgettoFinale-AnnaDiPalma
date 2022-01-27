@@ -1,0 +1,28 @@
+<div class="container py-5 d-flex justify-content-center">
+  <div class="card text-white bg-dark mb-3 text-center p-4" style="max-width: 35rem;">
+    <div class="card-header">
+      <h2>{{client.nomeContatto}} {{client.cognomeContatto}}</h2>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{client.tipoCliente}} {{client.partitaIva}}</h5>
+      <h5 class="card-text"><span class="text-danger">NOME:</span> {{client.nomeContatto}}</h5>
+      <h5 class="card-text"><span class="text-danger">COGNOME:</span> {{client.cognomeContatto}}</h5>
+      <h5 class="card-text"><span class="text-danger">TELEFONO:</span> {{client.telefono}}</h5>
+      <h5 class="card-text"><span class="text-danger">EMAIL:</span> {{client.email}}</h5>
+      <h5 class="card-text"><span class="text-danger">PEC:</span> {{client.pec}}</h5>
+      <h5 class="card-text"><span class="text-danger">VIA SEDE OPERATIVA:</span> {{client.indirizzoSedeOperativa.via}}</h5>
+      <h5 class="card-text"><span class="text-danger">LOCALITA SEDE OPERATIVA:</span> {{client.indirizzoSedeOperativa.localita}}</h5>
+      <h5 class="card-text"><span class="text-danger">COMUNE SEDE OPERATIVA:</span> {{client.indirizzoSedeOperativa.comune.nome}}</h5>
+      <h5 class="card-text"><span class="text-danger">PROVINCIA SEDE OPERATIVA:</span> {{client.indirizzoSedeOperativa.comune.provincia.nome}}</h5>
+      <h5 class="card-text"><span class="text-danger">VIA SEDE LEGALE:</span> {{client.indirizzoSedeLegale.via}}</h5>
+      <h5 class="card-text"><span class="text-danger">LOCALITA SEDE LEGALE:</span> {{client.indirizzoSedeLegale.localita}}</h5>
+      <h5 class="card-text"><span class="text-danger">COMUNE SEDE LEGALE:</span> {{client.indirizzoSedeLegale.comune.nome}}</h5>
+      <h5 class="card-text"><span class="text-danger">PROVINCIA SEDE LEGALE:</span> {{client.indirizzoSedeLegale.comune.provincia.nome}}</h5>
+      <h5 class="card-text"><span class="text-danger">DATA INSERIMENTO:</span> {{client.dataInserimento}}</h5>
+      <h5 class="card-text"><span class="text-danger">ULTIMO CONTATTO:</span> {{client.dataUltimoContatto}}</h5>
+    </div>
+    <div class="card-footer">
+      <button class="btn-primary mx-3" (click)="goEdit(client)"><b>MODIFICA</b></button><button class="btn-success" (click)="vediFatture(client)"><b>VEDI FATTURE</b></button>
+    </div>
+  </div>
+</div>

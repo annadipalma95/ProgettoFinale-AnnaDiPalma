@@ -1,0 +1,47 @@
+<div class="container py-5 d-flex justify-content-center">
+    <div class="card text-white bg-primary my-3 p-2" style="max-width: 33rem;">
+        <div class="card-header text-center">
+            <h3 class="text-warning">DETTAGLI FATTURA</h3>
+        </div>
+        <div class="card-body text-white">
+            <p class="card-text h5 p-1"><span class="text-dark">DATA:</span> {{fattura.data | date:'EEEE, MMMM d, y, h:mm:ss a zzzz'}}</p>
+            <p class="card-text h5 p-1"><span class="text-dark">NUMERO:</span> {{fattura.numero}}</p>
+            <p class="card-text h5 p-1"><span class="text-dark">IMPORTO:</span> {{fattura.importo}}</p>
+            <p class="card-text h5 p-1"><span class="text-dark">STATO:</span> {{fattura.stato.nome}}</p>
+            <p class="card-text h5 p-1"><span class="text-dark">RAGIONE SOCIALE:</span>
+                {{fattura.cliente.ragioneSociale}}</p>
+            <p class="card-text h5 p-1"><span class="text-dark">PARTITA IVA:</span> {{fattura.cliente.partitaIva}}</p>
+            <p class="card-text h5 "><span class="text-dark">TIPO CLIENTE:</span> {{fattura.cliente.tipoCliente}}</p>
+            <p class="card-text h5 p-1"><span class="text-dark">EMAIL:</span> {{fattura.cliente.email}}</p>
+            <p class="card-text h5 p-1"><span class="text-dark">PEC:</span> {{fattura.cliente.pec}}</p>
+            <p class="card-text h5 p-1"><span class="text-dark">TELEFONO:</span> {{fattura.cliente.telefono}}</p>
+            <p class="card-text h5 p-1"><span class="text-dark">NOME e COGNOME:</span> {{fattura.cliente.nomeContatto}}
+                {{fattura.cliente.cognomeContatto}}</p>
+            <p class="card-text h5 p-1"><span class="text-dark">TELEFONO:</span> {{fattura.cliente.telefonoContatto}}
+            </p>
+            <p class="card-text h5 p-1"><span class="text-dark">EMAIL CONTATTO:</span> {{fattura.cliente.emailContatto}}
+            </p>
+            <p class="card-text h5 p-1"><span class="text-dark">INDIRZZO SEDE OPERATIVA:</span>
+                {{fattura.cliente.indirizzoSedeOperativa.via}},
+                {{fattura.cliente.indirizzoSedeOperativa.cap}},
+                {{fattura.cliente.indirizzoSedeOperativa.localita}},
+                {{fattura.cliente.indirizzoSedeOperativa.comune.nome}}
+                {{fattura.cliente.indirizzoSedeOperativa.comune.provincia.nome}}</p>
+            <p class="card-text h5 p-1"><span class="text-dark">INDIRIZZO SEDE LEGALE:</span>
+                {{fattura.cliente.indirizzoSedeLegale.via}},
+                {{fattura.cliente.indirizzoSedeLegale.cap}}, {{fattura.cliente.indirizzoSedeLegale.localita}},
+                {{fattura.cliente.indirizzoSedeLegale.comune.nome}}</p>
+            <p class="card-text h5 p-1"><span class="text-dark">DATA INSERIMENTO:</span>
+                {{fattura.cliente.dataInserimento | date:'EEEE, MMMM d, y, h:mm:ss a zzzz'}}</p>
+            <p class="card-text h5 p-1"><span class="text-dark">DATA ULTIMO CONTATTO:</span>
+                {{fattura.cliente.dataUltimoContatto | date:'EEEE, MMMM d, y, h:mm:ss a zzzz'}}</p>
+        </div>
+        <div class="card-footer text-center">
+            <div class="row d-flex justify-content-around">
+                <button class="btn-dark" (click)="goBack()"><i class="bi bi-arrow-return-left"></i></button>
+
+                <button class="btn-warning" (click)="goEdit(fattura)"><b>GO EDIT</b></button>
+            </div>
+        </div>
+    </div>
+</div>

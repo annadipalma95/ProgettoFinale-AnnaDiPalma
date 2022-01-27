@@ -1,0 +1,45 @@
+<div class="container my-4">
+    <div class="input-group my-3 row">
+        <div class="input-group-prepend col-12">
+            <button class="btn btn-outline-secondary bg-primary text-white" type="button" id="button-addon1"
+                style="width:250px;"><b>NUMERO FATTURA</b></button>
+            <input type="text" class="form-control" [(ngModel)]="fattura.numero"
+                aria-label="Example text with button addon" aria-describedby="button-addon1">
+        </div>
+    </div>
+    <div class="input-group mb-3 row">
+        <div class="input-group-prepend col-12">
+            <button class="btn btn-outline-secondary bg-success text-dark" type="button" id="button-addon1"
+                style="width:250px;"><b>ANNO FATTURA</b></button>
+            <input type="text" class="form-control" [(ngModel)]="fattura.anno"
+                aria-label="Example text with button addon" aria-describedby="button-addon1">
+        </div>
+    </div>
+    <div class="input-group mb-3 row">
+        <div class="input-group-prepend col-12">
+            <button class="btn btn-outline-secondary bg-warning text-dark" type="button" id="button-addon1"
+                style="width:250px;"><b>IMPORTO FATTURA</b></button>
+            <input type="text" class="form-control" [(ngModel)]="fattura.importo"
+                aria-label="Example text with button addon" aria-describedby="button-addon1">
+        </div>
+    </div>
+    <div class="input-group mb-3 row">
+        <div class="input-group-prepend col-12">
+            <button class="btn btn-outline-secondary bg-danger text-white" type="button" id="button-addon1"
+                style="width:250px;"><b>STATO FATTURA</b></button>
+            <input type="text" class="form-control" [(ngModel)]="fattura.stato.nome"
+                aria-label="Example text with button addon" aria-describedby="button-addon1">
+        </div>
+    </div>
+    <div class="d-flex justify-content-center">
+        <h5 class="my-3">{{text}}</h5>
+    </div>
+    <div class="row">
+        <div class="d-flex float-left">
+            <button class="btn btn-primary" (click)="goBack()" style="margin-right:450px">GO BACK</button>
+        </div>
+        <div class="d-flex float-end">
+            <button class="btn btn-primary" (click)="edit()">EDIT</button>
+        </div>
+    </div>
+</div>

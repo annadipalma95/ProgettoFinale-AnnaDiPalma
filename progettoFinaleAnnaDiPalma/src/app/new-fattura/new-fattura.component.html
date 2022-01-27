@@ -1,0 +1,64 @@
+
+    <div class="container my-3 border shadow biancoTrasp">
+
+        <div class="container text-center text-white py-3 my-4 color2">
+            <h1 class="text-dark">INSERISCI LA TUA FATTURA</h1>
+        </div>
+
+
+        <div class="row px-3">
+
+            <div class="border p-3 col">
+                <h4>Importo</h4><span class="text-danger"></span>
+                <hr>
+                <input type="number" class="form-control" name="importo" [(ngModel)]="newFattura.importo">
+            </div>
+
+            <div class="border p-3 col">
+                <h4>Numero</h4>
+                <hr>
+                <input type="number" class="form-control" name="numero" [(ngModel)]="newFattura.numero">
+            </div>
+
+            <div class="border p-3 col">
+                <h4>Anno</h4>
+                <hr>
+                <input type="number" class="form-control" name="anno" [(ngModel)]="newFattura.anno">
+            </div>
+
+        </div>
+
+        <hr>
+
+        <div class="row px-3">
+
+            <div class="border p-3 col">
+                <h4>Data</h4>
+                <hr>
+                <input type="date" class="form-control" name="data" [(ngModel)]="newFattura.data">
+            </div>
+
+            <div class="border p-3 col">
+                <h4>Stato fattura</h4><span class="text-danger"></span>
+                <hr>
+                <input type="text" id="statoFattura" name="statoFattura" disabled value="NON PAGATO">
+                <!--<select class="form-select" [(ngModel)]="newFattura.stato" name="statoFattura">
+                    <option selected [ngValue]="newFattura.stato">{{newFattura.stato.nome}}</option>
+                    <option [ngValue]="item" *ngFor="let item of statoFattura">{{item.nome}}</option>
+                </select>!-->
+            </div>
+
+        </div>
+
+        <div class="container text-center py-3 mt-2">
+            <h3 class="text-success">{{testo}}</h3>
+        </div>
+
+        <div class="container text-center text-white py-3">
+            <button type="button" class="btn btn-success mx-2" (click)="addNew()">SALVA</button>
+        </div>
+
+        <p>&nbsp;</p>
+
+    </div>
+

@@ -1,0 +1,24 @@
+<div class="container py-5">
+    <table class="table table-striped table-dark">
+        <thead>
+          <tr>
+            <th scope="col">DATA</th>
+            <th scope="col">IMPORTO</th>
+            <th scope="col">STATO FATTURA</th>
+            <th scope="col">CLIENTE</th>
+            <th scope="col">RAGIONE SOCIALE</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let fattura of fatture">
+            <td>{{fattura.data | date:'EEEE, MMMM d, y'}} </td>
+            <td>{{fattura.importo}}</td>
+            <td>{{fattura.stato.nome}}</td>
+            <td>{{fattura.cliente.nomeContatto}}</td>
+            <td>{{fattura.cliente.ragioneSociale}}</td>
+            <td><button class="btn-danger mr-3"><i class="bi bi-trash-fill" (click)="remove(fattura)"></i></button>
+                <button class="btn-warning"><i class="bi bi-search"(click)="detail(fattura)"></i></button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>

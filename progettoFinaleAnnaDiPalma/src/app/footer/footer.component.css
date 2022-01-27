@@ -1,0 +1,6 @@
+footer {
+     background: linear-gradient(to top, rgba(161, 140, 209, 1), rgba(251, 194, 235, 1))
+}
+p, span, strong {
+    color:purple
+}

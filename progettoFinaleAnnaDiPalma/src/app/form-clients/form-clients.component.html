@@ -1,0 +1,219 @@
+<div class="container my-3 border shadow">
+
+    <div class="container text-center py-3 my-4">
+
+        <h2 class="text-primary mb-4">INSERISCI NUOVO CLIENTE</h2>
+        <hr class="bg-white">
+
+        <div class="row">
+            <div class="col-6">
+                <h4>Ragione sociale</h4><span class="text-center text-danger"><b>*campo obbligatorio</b></span>
+                <hr>
+                <input type="text" class="form-control" name="ragioneSociale" [(ngModel)]="newClient.ragioneSociale">
+            </div>
+            <div class="col-6">
+                <h4>Nome e cognome cliente</h4><span class="text-center text-danger"><b>*campo obbligatorio</b></span>
+                <hr>
+                <input type="text" class="form-control mb-1" name="ragioneSociale" [(ngModel)]="newClient.nomeContatto">
+                <input type="text" class="form-control" name="ragioneSociale" [(ngModel)]="newClient.cognomeContatto">
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row px-3">
+
+        <div class="border p-3 col text-center">
+            <h4 class="text-center">Partita IVA</h4><span class="text-danger text-center"><b>*campo obbligatorio</b></span>
+            <hr>
+            <input type="text" class="form-control" name="partitaIva" [(ngModel)]="newClient.partitaIva">
+        </div>
+
+        <div class="border p-3 col text-center">
+            <h4 class="text-center">Tipo Cliente</h4><span class="text-danger text-center"><b>*campo obbligatorio</b></span>
+            <hr>
+            <select class="form-select" [(ngModel)]="newClient.tipoCliente" name="tipoCliente">
+                <option selected [ngValue]="newClient.tipoCliente">{{newClient.tipoCliente}}</option>
+                <option *ngFor="let cliente of tipoClienti">{{cliente}}</option>
+            </select>
+        </div>
+
+    </div>
+
+    <hr>
+
+    <div class="row px-3">
+
+        <div class="border p-3 col">
+            <h4 class="text-center">Mail</h4>
+            <hr>
+            <input type="text" class="form-control" name="email" [(ngModel)]="newClient.email">
+        </div>
+
+        <div class="border p-3 col">
+            <h4 class="text-center">PEC</h4>
+            <hr>
+            <input type="text" class="form-control" name="pec" [(ngModel)]="newClient.pec">
+        </div>
+
+    </div>
+
+    <hr>
+
+    <div class="border p-3">
+        <h4 class="text-center">Telefono</h4>
+        <hr>
+        <input type="text" class="form-control" name="telefono" [(ngModel)]="newClient.telefono">
+    </div>
+
+    <hr>
+
+    <div class="row px-3">
+
+        <div class="border p-3 col">
+            <h4 class="text-center">Telefono contatto</h4>
+            <hr>
+            <input type="text" class="form-control" name="telefonoContatto" [(ngModel)]="newClient.telefonoContatto">
+        </div>
+
+        <div class="border p-3 col">
+            <h4 class="text-center">Email contatto</h4>
+            <hr>
+            <input type="text" class="form-control" name="emailContatto" [(ngModel)]="newClient.emailContatto">
+        </div>
+
+    </div>
+
+    <div class="container text-center text-white py-3 my-4 color2">
+        <h3 class="text-primary text-center">Sede operativa</h3>
+    </div>
+
+    <div class="row px-3">
+
+        <div class="border p-3 col">
+            <h4>Indirizzo</h4>
+            <hr>
+            <input type="text" class="form-control" name="indirizzoSedeOperativaVia"
+                [(ngModel)]="newClient.indirizzoSedeOperativa.via">
+        </div>
+
+        <div class="border p-3 col">
+            <h4 class="text-center">Civico</h4>
+            <hr>
+            <input type="text" class="form-control" name="indirizzoSedeOperativaCivico"
+                [(ngModel)]="newClient.indirizzoSedeOperativa.civico">
+        </div>
+
+        <div class="border p-3 col">
+            <h4 class="text-center">CAP</h4>
+            <hr>
+            <input type="text" class="form-control" name="indirizzoSedeOperativaCAP"
+                [(ngModel)]="newClient.indirizzoSedeOperativa.cap">
+        </div>
+
+    </div>
+    <div class="row px-3">
+
+        <div class="border p-3 col">
+            <h4 class="text-center">Località</h4>
+            <hr>
+            <input type="text" class="form-control" name="indirizzoSedeOperativaLocalita"
+                [(ngModel)]="newClient.indirizzoSedeOperativa.localita">
+        </div>
+
+        <div class="border p-3 col">
+            <h4 class="text-center">Provincia</h4>
+            <hr>
+            <select (change)="dropdown()" class="form-select" name="indirizzoSedeOperativaProvincia"
+                [(ngModel)]="provSelSO">>
+                <option selected [ngValue]="newClient.indirizzoSedeOperativa.comune.provincia">
+                    {{newClient.indirizzoSedeOperativa.comune.provincia.nome}}</option>
+                <option *ngFor="let item of province">{{item.nome}}</option>
+            </select>
+        </div>
+
+        <div class="border p-3 col">
+            <h4 class="text-center">Comune</h4><span class="text-danger"><b>*campo obbligatorio</b></span>
+            <hr>
+            <select class="form-select" [(ngModel)]="newClient.indirizzoSedeOperativa.comune"
+                name="indirizzoSedeOperativaComuneNome">
+                <option selected [ngValue]="newClient.indirizzoSedeOperativa.comune">
+                    {{newClient.indirizzoSedeOperativa.comune.nome}}</option>
+                <option [ngValue]="item" *ngFor="let item of comuniSO">{{item.nome}}</option>
+            </select>
+        </div>
+
+    </div>
+
+    <div class="container text-center text-white py-3 my-4 color2">
+        <h3 class="text-primary text-center">Sede legale</h3>
+    </div>
+
+    <div class="row px-3">
+
+        <div class="border p-3 col">
+            <h4 class="text-center">Indirizzo</h4>
+            <hr>
+            <input type="text" class="form-control" name="indirizzoSedeLegaleVia"
+                [(ngModel)]="newClient.indirizzoSedeLegale.via">
+        </div>
+
+        <div class="border p-3 col">
+            <h4 class="text-center">Civico</h4>
+            <hr>
+            <input type="text" class="form-control" name="indirizzoSedeLegaleCivico"
+                [(ngModel)]="newClient.indirizzoSedeLegale.civico">
+        </div>
+
+        <div class="border p-3 col">
+            <h4 class="text-center">CAP</h4>
+            <hr>
+            <input type="text" class="form-control" name="indirizzoSedeLegaleCAP"
+                [(ngModel)]="newClient.indirizzoSedeLegale.cap">
+        </div>
+
+    </div>
+
+    <div class="row px-3">
+
+        <div class="border p-3 col">
+            <h4 class="text-center">Località</h4>
+            <hr>
+            <input type="text" class="form-control" name="indirizzoSedeLegaleLocalita"
+                [(ngModel)]="newClient.indirizzoSedeLegale.localita">
+        </div>
+
+        <div class="border p-3 col">
+            <h4 class="text-center">Provincia</h4>
+            <hr>
+            <select (change)="dropdown()" class="form-select" name="indirizzoSedeLegaleProvincia"
+                [(ngModel)]="provSelSL">
+                <option selected [ngValue]="newClient.indirizzoSedeLegale.comune.provincia">
+                    {{newClient.indirizzoSedeLegale.comune.provincia.nome}}</option>
+                <option *ngFor="let item of province">{{item.nome}}</option>
+            </select>
+        </div>
+
+        <div class="border p-3 col">
+            <h4 class="text-center">Comune</h4><span class="text-danger"><b>*campo obbligatorio</b></span>
+            <hr>
+            <select class="form-select" [(ngModel)]="newClient.indirizzoSedeLegale.comune"
+                name="indirizzoSedeLegaleComuneNome">
+                <option selected [ngValue]="newClient.indirizzoSedeLegale.comune">
+                    {{newClient.indirizzoSedeLegale.comune.nome}}</option>
+                <option [ngValue]="item" *ngFor="let item of comuniSL">{{item.nome}}</option>
+            </select>
+        </div>
+
+    </div>
+
+    <div class="container text-center text-white py-3 my-2">
+        <h3 class="text-primary">{{text}}</h3>
+    </div>
+
+    <div class="container text-center text-white py-3">
+        <button type="button" (click)="addNewClient()" class="btn-lg btn-primary mx-2">AGGIUNGI</button>
+    </div>
+
+</div>
