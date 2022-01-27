@@ -87,11 +87,13 @@ export class FormClientsComponent implements OnInit {
   }
 
   GetComuni() {
-    this.comService.getAllComuni().subscribe(response => { this.comuniSL = response.content, this.comuniSO = response.content, this.filtro = response.content });
+    this.comService.getAllComuni()
+    .subscribe(response => { this.comuniSL = response.content, this.comuniSO = response.content, this.filtro = response.content });
   }
 
   GetProvince() {
-    this.provService.getAllProvince().subscribe(response => this.province = response.content);
+    this.provService.getAllProvince()
+    .subscribe(response => this.province = response.content);
   }
 
   dropdown() {
@@ -100,9 +102,10 @@ export class FormClientsComponent implements OnInit {
   }
 
   addNewClient() {
-    if (this.newClient.ragioneSociale != '' && this.newClient.partitaIva != '' && this.newClient.indirizzoSedeLegale.comune.nome != '' && this.newClient.indirizzoSedeOperativa.comune.nome != '' && this.newClient.tipoCliente != '') {
+    if (this.newClient.nomeContatto != '' && this.newClient.cognomeContatto != '' && this.newClient.emailContatto && this.newClient.email && this.newClient.partitaIva != '' && this.newClient.indirizzoSedeLegale.comune.nome != '' && this.newClient.indirizzoSedeOperativa.comune.nome != '' && this.newClient.tipoCliente != '') {
       {
-        this.clientService.addNewClient(this.newClient).subscribe(response => console.log(response));
+        this.clientService.addNewClient(this.newClient)
+        .subscribe(response => console.log(response));
         this.text = 'NUOVO CLIENTE INSERITO';
       }
     } else {

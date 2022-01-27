@@ -13,16 +13,18 @@ export class FattureClienteComponent implements OnInit {
   fatture: Fattura[] = [];
   nomeCliente = '';
 
-  constructor(private fattureService: FattureService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private fattureService: FattureService, 
+              private route: ActivatedRoute, 
+              ) { }
 
   ngOnInit(): void {
-    this.route.params.subscribe(params => this.fattureService.getByCliente(params['id'])
+    this.route.params
+    .subscribe(params => this.fattureService.getByCliente(params['id'])
     .subscribe(response => {this.fatture = response.content; this.nomeCliente = this.fatture[0].cliente.ragioneSociale}))
   }
 
   goBack() {
     history.back()
   }
-
 
 }

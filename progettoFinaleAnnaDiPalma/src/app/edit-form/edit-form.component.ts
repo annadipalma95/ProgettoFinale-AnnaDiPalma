@@ -66,12 +66,14 @@ export class EditFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      this.clientService.getClientById(params['id']).subscribe(data => this.client = data)
+      this.clientService.getClientById(params['id'])
+      .subscribe(data => this.client = data)
     })
   }
 
   edit() {
-    this.clientService.editClient(this.client).subscribe(response => console.log(response));
+    this.clientService.editClient(this.client)
+    .subscribe(response => console.log(response));
     this.text = "DATI CLIENTE MODIFICATI CON SUCCESSO"
   }
 
