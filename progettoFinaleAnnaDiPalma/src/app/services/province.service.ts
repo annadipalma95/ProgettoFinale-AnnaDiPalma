@@ -12,7 +12,7 @@ export class ProvinceService {
   constructor(private http: HttpClient) { }
 
   getAllProvince() {
-    return this.http.get<AllProvince>(environment.baseUrl+'api/province?page=0&size=20&sort=id,ASC')
+    return this.http.get<AllProvince>(environment.baseUrl+'api/province?page=0&size=20&sort=id,DESC')
   }
 
   addProvincia(provincia:Provincia) {

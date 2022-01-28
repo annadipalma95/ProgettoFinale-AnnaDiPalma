@@ -10,7 +10,7 @@ import { FattureService } from '../services/fatture.service';
 export class NewFatturaComponent implements OnInit {
 
   testo = '';
-  newFattura: Fattura = new Fattura;
+  newFattura: Fattura = new Fattura();
 
   //statoFattura: StatoFattura[] = [];
 

@@ -10,26 +10,10 @@ export class Fattura {
     importo!: number;
     stato!: StatoFattura;
     cliente!: Client;
-    indirizzoSedeOperativa!: {
-        id: number;
-        via: string;
-        civico: string;
-        cap: string;
-        localita: string;
-        comune: Comune;
-    };
-    indirizzoSedeLegale!: {
-        id: number;
-        via: string;
-        civico: string;
-        cap: string;
-        localita: string;
-        comune: Comune;
+
+    constructor() {
+        this.stato = {id: 2, nome: 'NON PAGATA'}
     }
-    
-        dataInserimento: string = "2019-06-01T08:11:01.911+00:00";
-        dataUltimoContatto: string = "2021-03-24T21:32:06.375+00:00";
-        fatturatoAnnuale!: null;
         
     }
     

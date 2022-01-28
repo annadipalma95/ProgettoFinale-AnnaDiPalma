@@ -14,7 +14,7 @@ export class FattureService {
   constructor(private http:HttpClient) { }
 
   getAll() {
-    return this.http.get<Fatture>(environment.baseUrl+'api/fatture?page=0&size=20&sort=id,ASC')
+    return this.http.get<Fatture>(environment.baseUrl+'api/fatture?page=0&size=20&sort=id,DESC')
   }
   getById(id:number) {
     return this.http.get<Fattura>(environment.baseUrl+'api/fatture/'+id)

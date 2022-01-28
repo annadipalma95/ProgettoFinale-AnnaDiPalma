@@ -9,7 +9,7 @@ import { Clients } from '../interfaces/clients';
 })
 export class ClientsService {
 
-  clients = environment.baseUrl+'api/clienti?page=0&size=20&sort=id,ASC'
+  clients = environment.baseUrl+'api/clienti?page=0&size=20&sort=id,DESC'
 
   constructor(private http: HttpClient) { }
   
