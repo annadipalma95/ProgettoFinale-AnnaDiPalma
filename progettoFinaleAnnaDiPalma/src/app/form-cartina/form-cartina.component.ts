@@ -78,6 +78,8 @@ export class FormCartinaComponent implements OnInit, DoCheck {
       alert('Riempi tutti i campi!!!')
     }
   }
-}
+
+  }
+
 
 
