@@ -1,6 +1,6 @@
 import { Fattura } from "../classes/fattura";
 
-export interface Fatture {
+export interface IFatture {
         content: Fattura[],
         pageable: {
             sort: {

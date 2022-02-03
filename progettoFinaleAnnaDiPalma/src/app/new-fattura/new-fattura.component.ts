@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Fattura } from '../classes/fattura';
+import { StatoFattura } from '../classes/stato-fattura';
 import { FattureService } from '../services/fatture.service';
 
 @Component({
@@ -11,8 +12,8 @@ export class NewFatturaComponent implements OnInit {
 
   testo = '';
   newFattura: Fattura = new Fattura();
+  statoFattura: StatoFattura[] = [];
 
-  //statoFattura: StatoFattura[] = [];
 
   constructor(private Fattureservice: FattureService) { }
 
@@ -20,10 +21,12 @@ export class NewFatturaComponent implements OnInit {
   }
 
   addNew() {
-    if (this.newFattura.importo && this.newFattura.anno && this.newFattura.numero) {
-    this.Fattureservice.addNew(this.newFattura)
-      .subscribe(response => console.log(response));
-    this.testo = 'FATTURA INVIATA'
+    if (this.newFattura.data != '' && this.newFattura.importo != 0 && this.newFattura.stato.nome != '') {
+      if (!this.newFattura.id) {
+        this.Fattureservice.addNew(this.newFattura)
+          .subscribe(response => console.log(response));
+        this.testo = 'FATTURA INVIATA'
+      }
     }
     else {
       alert('COMPILA TUTTI I CAMPI!!!')

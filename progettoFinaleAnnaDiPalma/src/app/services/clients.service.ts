@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Client } from '../classes/client';
-import { Clients } from '../interfaces/clients';
+import { IClients } from '../interfaces/i-clients';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,7 @@ export class ClientsService {
   constructor(private http: HttpClient) { }
   
   getAllClients() {
-    return this.http.get<Clients>(this.clients);
+    return this.http.get<IClients>(this.clients);
   }
 
   getClientById(id:number) {
@@ -29,7 +29,7 @@ export class ClientsService {
     return this.http.post<Client>(environment.baseUrl+'api/clienti', client)
   }
 
-  editClient(client:Client) {
+  updateClient(client:Client) {
     return this.http.put<Client>(environment.baseUrl+'api/clienti/'+client.id, client)
   }
 

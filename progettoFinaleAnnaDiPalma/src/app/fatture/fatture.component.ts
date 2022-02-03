@@ -1,7 +1,5 @@
 import { Component, DoCheck, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Client } from '../classes/client';
-import { Comune } from '../classes/comune';
 import { Fattura } from '../classes/fattura';
 import { FattureService } from '../services/fatture.service';
 

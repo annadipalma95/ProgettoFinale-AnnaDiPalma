@@ -12,7 +12,7 @@ export class ComuniService {
   constructor(private http: HttpClient) { }
 
   getAllComuni() {
-    return this.http.get<AllComuni>(environment.baseUrl+'api/comuni?page=0&size=20&sort=id,ASC')
+    return this.http.get<AllComuni>(environment.baseUrl+'api/comuni?page=0&size=20&sort=id,DESC')
   }
 
   addComune(comune: Comune) {

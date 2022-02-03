@@ -21,7 +21,6 @@ import { FormCartinaComponent } from './form-cartina/form-cartina.component';
 import { NewFatturaComponent } from './new-fattura/new-fattura.component';
 import { FooterComponent } from './footer/footer.component';
 import { FattureClienteComponent } from './fatture-cliente/fatture-cliente.component';
-import { FormCartina2Component } from './form-cartina2/form-cartina2.component';
 
 @NgModule({
   declarations: [
@@ -39,8 +38,7 @@ import { FormCartina2Component } from './form-cartina2/form-cartina2.component';
     FormCartinaComponent,
     NewFatturaComponent,
     FooterComponent,
-    FattureClienteComponent,
-    FormCartina2Component
+    FattureClienteComponent
   ],
   imports: [
     BrowserModule,

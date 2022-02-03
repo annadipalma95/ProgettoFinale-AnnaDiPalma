@@ -1,5 +1,4 @@
 import { Client } from "./client"
-import { Comune } from "./comune"
 import { StatoFattura } from "./stato-fattura";
 
 export class Fattura {
@@ -8,7 +7,10 @@ export class Fattura {
     numero!: number;
     anno!: number;
     importo!: number;
-    stato!: StatoFattura;
+    stato!:{
+        id?: number,
+        nome: string
+    };
     cliente!: Client;
 
     constructor() {

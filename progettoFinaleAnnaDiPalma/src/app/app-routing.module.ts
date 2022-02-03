@@ -9,7 +9,6 @@ import { EditFormComponent } from './edit-form/edit-form.component';
 import { FattureClienteComponent } from './fatture-cliente/fatture-cliente.component';
 import { FattureComponent } from './fatture/fatture.component';
 import { FormCartinaComponent } from './form-cartina/form-cartina.component';
-import { FormCartina2Component } from './form-cartina2/form-cartina2.component';
 import { FormClientsComponent } from './form-clients/form-clients.component';
 import { HomeComponent } from './home/home.component';
 import { NewFatturaComponent } from './new-fattura/new-fattura.component';

@@ -2,6 +2,7 @@ import { Component, DoCheck, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Comune } from '../classes/comune';
 import { Fattura } from '../classes/fattura';
+import { IFatture } from '../interfaces/i-fatture';
 import { FattureService } from '../services/fatture.service';
 
 @Component({
@@ -14,7 +15,7 @@ export class DetailFatturaComponent implements OnInit, DoCheck {
   ngDoCheck(): void {}
 
   fattura: Fattura = new Fattura();
-  fattureArray: Fattura[] = []
+  fattureArray: IFatture[] = []
 
   constructor(private route: ActivatedRoute,
     private fatturaService: FattureService,

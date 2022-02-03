@@ -72,7 +72,7 @@ export class EditFormComponent implements OnInit {
   }
 
   edit() {
-    this.clientService.editClient(this.client)
+    this.clientService.updateClient(this.client)
     .subscribe(response => console.log(response));
     this.text = "DATI CLIENTE MODIFICATI CON SUCCESSO"
   }

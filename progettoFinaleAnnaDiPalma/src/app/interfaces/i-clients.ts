@@ -1,6 +1,6 @@
 import { Client } from "../classes/client";
 
-export interface Clients {
+export interface IClients {
     content: Array<Client>,
     empty: boolean
     first: boolean

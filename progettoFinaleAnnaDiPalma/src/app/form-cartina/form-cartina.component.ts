@@ -68,11 +68,14 @@ export class FormCartinaComponent implements OnInit, DoCheck {
 
   salvaComune() {
     if (this.newComune.nome != "" && this.provSel != 0) {
+      if (!this.comuni.find(element => element.nome == this.newComune.nome))
       {
         this.newComune.provincia.id = this.provSel;
         this.comuniService.addComune(this.newComune)
           .subscribe(response => console.log(response))
         this.testoComune = 'Comune inserito con successo!'
+      } else {
+        alert('Comune già presente nel database!')
       }
     } else {
       alert('Riempi tutti i campi!!!')
